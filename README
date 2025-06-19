@@ -1,0 +1,100 @@
+A lightweight TCP-based echo server and client implemented in C, demonstrating basic network programming concepts using Windows Sockets API (Winsock).
+
+## 📋 Project Overview
+
+NetEcho is a minimal yet functional implementation of a client-server architecture where:
+- The **server** listens for incoming connections and echoes back any received messages
+- The **client** connects to the server and sends messages
+- Perfect for learning socket programming fundamentals
+
+## 🚀 Features
+
+- **Simple Implementation**: Easy-to-understand codebase
+- **Cross-Platform**: Works on Windows (with MinGW)
+- **No Dependencies**: Only requires standard C libraries and Winsock
+- **Educational**: Great for learning network programming basics
+
+## 🛠️ Prerequisites
+
+- Windows OS
+- MinGW-w64 (for compilation)
+- Basic command line knowledge
+
+## 🚀 Getting Started
+
+### Compilation
+
+1. Ensure you have MinGW-w64 installed and added to your PATH
+2. Run the build script:
+   ```bash
+   build_and_run.bat
+   ```
+
+### Running the Programs
+
+1. **Start the Server** (in one terminal):
+   ```bash
+   listener.exe
+   ```
+
+2. **Start the Client** (in another terminal):
+   ```bash
+   client.exe
+   ```
+
+3. **Send Messages**:
+   - Type any message in the client and press Enter
+   - The server will echo it back
+   - Type `exit` to quit the client
+
+## 📁 Project Structure
+
+```
+NetEcho/
+├── simple_listener.c  # Server implementation
+├── simple_client.c    # Client implementation
+├── build_and_run.bat  # Build script
+└── README.md         # This file
+```
+
+## 🔍 How It Works
+
+1. **Server** (`simple_listener.c`):
+   - Creates a TCP socket
+   - Binds to port 8888
+   - Listens for incoming connections
+   - Accepts client connections
+   - Echoes back received messages
+
+2. **Client** (`simple_client.c`):
+   - Creates a TCP socket
+   - Connects to the server at 127.0.0.1:8888
+   - Sends user input to the server
+   - Displays echoed responses
+
+## 🛠️ Build Script
+
+The `build_and_run.bat` script:
+1. Compiles both server and client
+2. Provides instructions for running the programs
+3. Handles basic error checking
+
+## 📝 Notes
+
+- The server can handle one client at a time (single-threaded)
+- Runs on localhost (127.0.0.1) by default
+- Port 8888 is used (can be changed in the code)
+- No authentication or encryption (for educational purposes only)
+
+## 📚 Learning Resources
+
+- [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/)
+- [Winsock Programming](https://docs.microsoft.com/en-us/windows/win32/winsock/windows-sockets-start-page-2)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+Created with ❤️ for educational purposes
